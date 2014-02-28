@@ -109,6 +109,8 @@ module.exports = (grunt) ->
   # Fire up a server on local machine for development
   grunt.registerTask "server", [
       "clean"
+    , "less:server"
+    , "autoprefixer"
     , "concurrent:server"
   ]
 
