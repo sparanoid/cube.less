@@ -5,6 +5,10 @@
 
 3D (animated) cube using only CSS.
 
+## Demo
+
+See this [demo page](http://sparanoid.com/lab/cube.less/). There's also a [live production site (WIP)](http://avoscloud.com/) using these cubes.
+
 ## Install
 
     bower install cube.less
