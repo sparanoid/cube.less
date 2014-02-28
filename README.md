@@ -13,8 +13,6 @@
 
     npm install && grunt server
 
-Need a simpler setup using this theme? Try [Jekyll Scaffolding](http://github.com/sparanoid/jekyll-scaffolding/).
-
 ## Author
 
 **Tunghsiao Liu**
