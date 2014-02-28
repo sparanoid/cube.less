@@ -5,6 +5,10 @@
 
 3D (animated) cube using only CSS.
 
+## Setup
+
+    bower install cube.less
+
 ## Dev Setup
 
     npm install && grunt server
