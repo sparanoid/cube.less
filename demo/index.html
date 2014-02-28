@@ -8,13 +8,12 @@
   body {
     background: rgba(153, 235, 255, .2);
   }
-    .wrap {
-      height: 3000px;
-    }
-
-    .cube > * {
-      border-color: rgba(28, 183, 221, .9);
-    }
+  .wrap {
+    height: 3000px;
+  }
+  .cube > * {
+    border-color: rgba(28, 183, 221, .9);
+  }
 </style>
 
 <div class="wrap cube-perspective cube-unselectable">
@@ -43,7 +42,7 @@
 </div>
 <!-- .wrap -->
 
-<script type=text/javascript>
+<script>
   document.addEventListener("DOMContentLoaded", function(){
     var cubes = document.querySelectorAll(".cube-perspective .cube");
     Array.prototype.forEach.call(cubes, function(el, i){
