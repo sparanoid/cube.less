@@ -1,0 +1,19 @@
+{
+  "name": "cube.less",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sparanoid/cube.less",
+  "authors": [
+    "Tunghsiao Liu <t@sparanoid.com>"
+  ],
+  "main": [
+    "./css/cube.css"
+  ],
+  "license": "WTFPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "cube.less",
+  "version": "0.0.1",
+  "description": "3D (animated) cube using only CSS",
+  "author": "Tunghsiao Liu",
+  "homepage": "http://sparanoid.com/",
+  "main": "Gruntfile.coffee",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sparanoid/cube.less.git"
+  },
+  "bugs": {
+    "url": "http://github.com/sparanoid/cube.less/issues"
+  },
+  "licenses": {
+    "type": "WTFPL",
+    "url": "http://github.com/sparanoid/cube.less/blob/master/LICENSE"
+  },
+  "keywords": [
+    "3d",
+    "webkit",
+    "less",
+    "css"
+  ],
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-cssmin": "^0.7.0",
+    "grunt-contrib-less": "~0.9.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-autoprefixer": "^0.6.5",
+    "grunt-coffeelint": "0.0.8",
+    "grunt-concurrent": "~0.4.3",
+    "grunt-conventional-changelog": "^1.1.0",
+    "grunt-csscomb": "~2.0.1",
+    "matchdep": "~0.3.0"
+  }
+}
