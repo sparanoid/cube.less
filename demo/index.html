@@ -1,0 +1,55 @@
+<!doctype html>
+
+<title>cube.less Demo</title>
+
+<link rel=stylesheet href="../css/cube.css">
+
+<style>
+  body {
+    background: rgba(153, 235, 255, .2);
+  }
+    .wrap {
+      height: 3000px;
+    }
+
+    .cube > * {
+      border-color: rgba(28, 183, 221, .9);
+    }
+</style>
+
+<div class="wrap cube-perspective cube-unselectable">
+  <span class="cube cube-01"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-02"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-03"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-04"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-05"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-06"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-07"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-08"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-09"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-10"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-11"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-12"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-13"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-14"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-15"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-16"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-17"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-18"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-19"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-20"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-21"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="cube cube-22"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+</div>
+<!-- .wrap -->
+
+<script type=text/javascript>
+  document.addEventListener("DOMContentLoaded", function(){
+    var cubes = document.querySelectorAll(".cube-perspective .cube");
+    Array.prototype.forEach.call(cubes, function(el, i){
+      setTimeout(function() {
+        el.className += " hover";
+      }, 2111 + i * 400);
+    });
+  });
+</script>
