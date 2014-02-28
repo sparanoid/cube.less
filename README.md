@@ -11,7 +11,7 @@
 
 ## Options
 
-### Mixin
+### Mixins
 
 #### .makecube
 
@@ -49,7 +49,11 @@ Rotate the cube along the Z-axis.
 
 #### .makeperspective
 
-Make canvas perspective to parent element
+##### @perspective
+
+Default: `2500`
+
+Make canvas perspective to parent element.
 
 ### Additional Classes
 
@@ -71,12 +75,11 @@ The following is a basic markup:
 
 ```html
 ...
-<div class="wrap cube-perspective cube-unselectable">
+<div class="cube-perspective">
   <span class="cube cube-01"><i></i><i></i><i></i><i></i><i></i><i></i></span>
   <span class="cube cube-02 cube-border"><i></i><i></i><i></i><i></i><i></i><i></i></span>
   <span class="cube cube-03 cube-borderless"><i></i><i></i><i></i><i></i><i></i><i></i></span>
   <span class="cube cube-04"><i></i><i></i><i></i><i></i><i></i><i></i></span>
-  <span class="cube cube-05"><i></i><i></i><i></i><i></i><i></i><i></i></span>
 </div>
 ...
 ```
