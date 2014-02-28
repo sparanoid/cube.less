@@ -4,16 +4,15 @@
   width: @size;
   height: @size;
   transform-style: preserve-3d;
-  // transform-origin: (@size / 2) (@size / 2) -(@size / 2);
   transform: rotate3d(0, 0, 0, 0deg) translateZ(@depth) rotateX(@rotate-x) rotateY(@rotate-y) rotateZ(@rotate-z); // rotate3d for performance hack
-  pointer-events: none;
 
-  i {
+  > * {
     display: block;
     position: absolute;
     content: " ";
     width: @size;
     height: @size;
+    background: fade(#99ebff, 10%);
     border: 1px solid;
     z-index: 20;
     transition: all .4s ease;
@@ -21,40 +20,144 @@
 
     // Front
     &:nth-child(1) {
-      // background: fade(red, 20%);
     	transform: rotateZ(0deg)   translateZ((@size / 2));
     }
 
     // Top
     &:nth-child(2) {
-      // background: fade(blue, 20%);
     	transform: rotateX(90deg)  translateZ((@size / 2));
     }
 
     // Bottom
     &:nth-child(3) {
-      // background: fade(yellow, 20%);
     	transform: rotateX(-90deg) translateZ((@size / 2));
     }
 
     // Left
     &:nth-child(4) {
-      // background: fade(green, 20%);
     	transform: rotateY(-90deg) translateZ((@size / 2));
     }
 
     // Right
     &:nth-child(5) {
-      // background: fade(purple, 20%);
     	transform: rotateY(90deg)  translateZ((@size / 2));
     }
 
     // Back
     &:nth-child(6) {
-      // background: fade(orange, 20%);
     	transform: rotateY(180deg) translateZ((@size / 2));
     }
   }
 }
 
+// Debug color scheme
+.cube-debug > * {
+
+  > * {
+
+    // Front
+    &:nth-child(1) {
+      background: fade(red, 20%);
+    }
+
+    // Top
+    &:nth-child(2) {
+      background: fade(blue, 20%);
+    }
+
+    // Bottom
+    &:nth-child(3) {
+      background: fade(yellow, 20%);
+    }
+
+    // Left
+    &:nth-child(4) {
+      background: fade(green, 20%);
+    }
+
+    // Right
+    &:nth-child(5) {
+      background: fade(purple, 20%);
+    }
+
+    // Back
+    &:nth-child(6) {
+      background: fade(orange, 20%);
+    }
+  }
+}
+
+// Perspective mixin
+.makeperspective(@perspective: 2500) {
+  perspective: @perspective;
+}
+
+// Set canvas perspective
+.cube-perspective {
+  .makeperspective(3000);
+}
+
+// Outline option
+.cube-border {
+
+  > * {
+    background: transparent !important;
+    border: 1px solid;
+  }
+}
+
+// No outline version
+.cube-borderless {
+
+  > * {
+    border: none !important;
+  }
+}
+
+// Make them unselectable
+.cube-unselectable {
+  pointer-events: none;
+}
+
+// Animated cube example
+.cube.hover {
+  animation: hover 30s ease infinite;
+}
+
+// Define keyframes
+@keyframes hover {
+  10% { transform: rotate3d(0, 1, 1, 10deg); }
+  20% { transform: rotate3d(1, 0, 1, 208deg); }
+  30% { transform: rotate3d(1, 1, 0, 10deg); }
+  40% { transform: rotate3d(1, 0, 0, 50deg); }
+  50% { transform: rotate3d(0, 1, 1, 30deg); }
+  60% { transform: rotate3d(0, 1, 1, 190deg); }
+  70% { transform: rotate3d(0, 1, 0, 70deg); }
+  80% { transform: rotate3d(1, 1, 0, 120deg); }
+  90% { transform: rotate3d(1, 1, 1, -20deg); }
+}
+
+// Demo cubes
 .cube-01 { .makecube(120px, 100px,  -30deg, -60deg,  -10deg); left: 20%; top: 2%; }
+.cube-01 { .makecube(120px, 100px,  -30deg, -60deg,  -10deg); left: 20%; top: 2%; }
+.cube-02 { .makecube(220px, 200px,  -50deg, -60deg,   20deg); left: 15%; top: 8%; }
+.cube-03 { .makecube(120px, 150px,  -65deg, -30deg,  -10deg); left: 10%; top: 14%; }
+.cube-04 { .makecube(70px,  100px,  -90deg, 100deg,   30deg); left: 62%; top: 12%; }
+.cube-05 { .makecube(90px,  100px,  -95deg, -20deg,  -16deg); left: 31%; top: 16.5%; }
+.cube-06 { .makecube(170px, 160px,  -25deg, -37deg,  -16deg); left: 39%; top: 20%; }
+.cube-07 { .makecube(270px, 400px,  -95deg, 120deg,   50deg); left: 56%; top: 26%; }
+.cube-08 { .makecube(210px, 260px,   95deg, -20deg,  -16deg); left: 22%; top: 33%; }
+.cube-09 { .makecube(160px, 160px,  205deg, 100deg, -100deg); left: 12%; top: 39%; }
+.cube-10 { .makecube(160px, 290px,  -67deg, -30deg, -100deg); left: 33%; top: 45%; }
+.cube-11 { .makecube(260px, 360px, -100deg, -70deg,  -10deg); left: 60%; top: 47%; }
+.cube-12 { .makecube(240px, 390px, -310deg, 290deg,  -10deg); left: 45%; top: 54%; }
+.cube-13 { .makecube(70px,  100px,   27deg, -60deg,   20deg); left: 30%; top: 53%; }
+.cube-14 { .makecube(70px,  100px, -230deg, -90deg,  -80deg); left: 90%; top: 50%; }
+.cube-15 { .makecube(190px, 280px,  -30deg, -60deg,  -10deg); left: 25%; top: 65%; }
+.cube-16 { .makecube(130px, 170px,  -25deg, -37deg,  -16deg); left: 38%; top: 70%; }
+.cube-17 { .makecube(80px,  110px,  205deg, 100deg, -100deg); left: 39%; top: 77%; }
+.cube-18 { .makecube(190px, 280px,   95deg, -20deg,  -16deg); left: 50%; top: 75%; }
+.cube-19 { .makecube(100px, 200px,  -95deg, 230deg,  -10deg); left: 48%; top: 84%; }
+.cube-20 { .makecube(280px, 420px,  250deg, 290deg,  -10deg); left: 24%; top: 82%; }
+.cube-21 { .makecube(130px, 200px,   27deg, -60deg,   20deg); left: 52%; top: 93%; }
+.cube-22 { .makecube(60px,  100px, -310deg, 290deg,  -10deg); left: 80%; top: 92%; }
