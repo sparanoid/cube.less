@@ -1,7 +1,6 @@
 # cube.less
 [![Build Status](https://travis-ci.org/sparanoid/cube.less.png)](https://travis-ci.org/sparanoid/cube.less)
 [![devDependency Status](https://david-dm.org/sparanoid/cube.less/dev-status.png)](https://david-dm.org/sparanoid/cube.less#info=devDependencies)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sparanoid/cube.less/trend.png)](https://bitdeli.com/free)
 
 3D (animated) cube using only CSS.
 
