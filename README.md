@@ -1,6 +1,6 @@
 # cube.less
-[![Build Status](https://travis-ci.org/sparanoid/cube.less.png)](https://travis-ci.org/sparanoid/cube.less)
-[![devDependency Status](https://david-dm.org/sparanoid/cube.less/dev-status.png)](https://david-dm.org/sparanoid/cube.less#info=devDependencies)
+[![Build Status](https://travis-ci.org/sparanoid/cube.less.svg)](https://travis-ci.org/sparanoid/cube.less)
+[![devDependency Status](https://david-dm.org/sparanoid/cube.less/dev-status.svg)](https://david-dm.org/sparanoid/cube.less#info=devDependencies)
 
 3D (animated) cube using only CSS.
 
