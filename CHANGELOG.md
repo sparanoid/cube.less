@@ -1,3 +1,19 @@
+<a name"0.0.2"></a>
+### 0.0.2 (2015-07-18)
+
+
+#### Bug Fixes
+
+* **demo:** cleanup cleanup cleanup ([828a78df](https://github.com/sparanoid/cube.less/commit/828a78df))
+* **less:** fix HAML loop increment number ([ee666f07](https://github.com/sparanoid/cube.less/commit/ee666f07))
+
+
+#### Features
+
+* update Grunt workflow, use lesslint instead of csslint ([0f50df74](https://github.com/sparanoid/cube.less/commit/0f50df74))
+* update license ([f765970d](https://github.com/sparanoid/cube.less/commit/f765970d))
+
+
 <a name="0.0.1"></a>
 ### 0.0.1 (2014-02-28)
 
