@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/sparanoid/cube.less.png)](https://travis-ci.org/sparanoid/cube.less)
 [![devDependency Status](https://david-dm.org/sparanoid/cube.less/dev-status.png)](https://david-dm.org/sparanoid/cube.less#info=devDependencies)
 
-3D (animated) cube using only CSS.
+3D (animated) cube using only CSS (LESS).
 
 ## Demo
 
@@ -10,7 +10,9 @@ See this [demo page](http://sparanoid.com/lab/cube.less/). There's also a [live 
 
 ## Install
 
-    bower install cube.less
+```ssh
+$ bower install cube.less
+```
 
 ## Options
 
@@ -104,4 +106,4 @@ See [demo](https://github.com/sparanoid/cube.less/blob/master/demo/index.html).
 
 ## Licenses
 
-WTFPL
+MIT
