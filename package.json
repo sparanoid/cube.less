@@ -1,7 +1,7 @@
 {
   "name": "cube.less",
   "version": "0.0.2",
-  "description": "3D (animated) cube using only CSS",
+  "description": "3D (animated) cube using only CSS (LESS)",
   "author": "Tunghsiao Liu",
   "homepage": "http://sparanoid.com/",
   "main": "Gruntfile.coffee",
@@ -16,7 +16,7 @@
     "url": "http://github.com/sparanoid/cube.less/issues"
   },
   "licenses": {
-    "type": "WTFPL",
+    "type": "MIT",
     "url": "http://github.com/sparanoid/cube.less/blob/master/LICENSE"
   },
   "keywords": [

@@ -6,9 +6,9 @@
     "Tunghsiao Liu <t@sparanoid.com>"
   ],
   "main": [
-    "./css/cube.css"
+    "./less/cube.less"
   ],
-  "license": "WTFPL",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
