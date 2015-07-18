@@ -2,8 +2,7 @@
 module.exports = (grunt) ->
 
   # Load all grunt tasks
-  matchdep = require("matchdep")
-  matchdep.filterDev("grunt-*").forEach grunt.loadNpmTasks
+  require("matchdep").filterDev("grunt-*").forEach grunt.loadNpmTasks
 
   # Configurable paths
   coreConfig =
@@ -14,8 +13,6 @@ module.exports = (grunt) ->
       banner = "/*!\n"
       banner += " * (c) <%= core.pkg.author %>.\n *\n"
       banner += " * <%= core.pkg.name %> - v<%= core.pkg.version %> (<%= grunt.template.today('mm-dd-yyyy') %>)\n"
-      # banner += " * <%= core.pkg.homepage %>\n"
-      banner += " * <%= core.pkg.licenses.type %> - <%= core.pkg.licenses.url %>\n"
       banner += " */"
       banner
 
@@ -36,9 +33,10 @@ module.exports = (grunt) ->
       test:
         src: ["Gruntfile.coffee"]
 
-    csslint:
+    lesslint:
       options:
-        csslintrc: "<%= core.app %>/.csslintrc"
+        csslint:
+          csslintrc: "<%= core.app %>/.csslintrc"
 
       test:
         src: ["<%= core.dist %>/cube.css"]
@@ -50,10 +48,10 @@ module.exports = (grunt) ->
 
       less:
         files: ["<%= core.app %>/**/*.less"]
-        tasks: ["less:server", "autoprefixer", "csslint"]
+        tasks: ["less:serve", "autoprefixer", "lesslint"]
 
     less:
-      server:
+      serve:
         options:
           strictMath: true
           sourceMap: true
@@ -65,21 +63,22 @@ module.exports = (grunt) ->
         dest: "<%= core.dist %>/cube.css"
 
       dist:
-        src: ["<%= less.server.src %>"]
-        dest: "<%= less.server.dest %>"
+        src: ["<%= less.serve.src %>"]
+        dest: "<%= less.serve.dest %>"
 
     autoprefixer:
       dist:
-        src: ["<%= less.server.dest %>"]
-        dest: "<%= less.server.dest %>"
+        src: ["<%= less.serve.dest %>"]
+        options:
+          map: true
 
     csscomb:
       options:
         config: "<%= core.app %>/.csscomb.json"
 
       dist:
-        src: ["<%= less.server.dest %>"]
-        dest: "<%= less.server.dest %>"
+        src: ["<%= less.serve.dest %>"]
+        dest: "<%= less.serve.dest %>"
 
     cssmin:
       dist:
@@ -98,7 +97,7 @@ module.exports = (grunt) ->
       options:
         logConcurrentOutput: true
 
-      server:
+      serve:
         tasks: ["watch"]
 
       dist:
@@ -107,17 +106,17 @@ module.exports = (grunt) ->
     clean: [".tmp", "<%= core.dist %>/*"]
 
   # Fire up a server on local machine for development
-  grunt.registerTask "server", [
+  grunt.registerTask "serve", [
       "clean"
-    , "less:server"
+    , "less:serve"
     , "autoprefixer"
-    , "concurrent:server"
+    , "concurrent:serve"
   ]
 
   # Test task
   grunt.registerTask "test", [
       "build"
-    , "csslint"
+    , "lesslint"
   ]
 
   # Build site with `jekyll`
