@@ -15,10 +15,7 @@
   "bugs": {
     "url": "http://github.com/sparanoid/cube.less/issues"
   },
-  "licenses": {
-    "type": "MIT",
-    "url": "http://github.com/sparanoid/cube.less/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "keywords": [
     "3d",
     "webkit",
