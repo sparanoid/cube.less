@@ -30,12 +30,12 @@
     "grunt-coffeelint": "0.0.13",
     "grunt-concurrent": "^2.0.0",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-conventional-changelog": "^1.2.2",
+    "grunt-conventional-changelog": "^5.0.0",
     "grunt-csscomb": "^3.0.1",
     "grunt-lesslint": "^1.1.14",
-    "matchdep": "^0.3.0"
+    "matchdep": "^1.0.0"
   }
 }
