@@ -136,26 +136,26 @@ module.exports = (grunt) ->
 
   # Fire up a server on local machine for development
   grunt.registerTask "serve", [
-      "clean"
-    , "less:serve"
-    , "postcss:serve"
-    , "concurrent:serve"
+    "clean"
+    "less:serve"
+    "postcss:serve"
+    "concurrent:serve"
   ]
 
   # Test task
   grunt.registerTask "test", [
-      "build"
-    , "lesslint"
+    "build"
+    "lesslint"
   ]
 
   # Build site with `jekyll`
   grunt.registerTask "build", [
-      "clean"
-    , "coffeelint"
-    , "less:dist"
-    , "postcss:dist"
-    , "csscomb"
-    , "concurrent:dist"
+    "clean"
+    "coffeelint"
+    "less:dist"
+    "postcss:dist"
+    "csscomb"
+    "concurrent:dist"
   ]
 
   # Release new version
