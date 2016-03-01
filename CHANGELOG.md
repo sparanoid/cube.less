@@ -1,3 +1,22 @@
+<a name="0.0.3"></a>
+## [0.0.3](https://github.com/sparanoid/cube.less/compare/v0.0.2...v0.0.3) (2016-03-01)
+
+
+### Bug Fixes
+
+* **grunt:** remove unused config ([56dd8a0](https://github.com/sparanoid/cube.less/commit/56dd8a0))
+* **grunt:** wrong lint order ([c1e3d59](https://github.com/sparanoid/cube.less/commit/c1e3d59))
+* **grunt:** wrong lint target ([883aefe](https://github.com/sparanoid/cube.less/commit/883aefe))
+* **less:** duplicated define ([0d04c68](https://github.com/sparanoid/cube.less/commit/0d04c68))
+
+### Features
+
+* **grunt:** replace `grunt-autoprefixer` with `postcss` ([76641e6](https://github.com/sparanoid/cube.less/commit/76641e6))
+* **grunt:** use new syntax for `conventionalChangelog` ([a5dd397](https://github.com/sparanoid/cube.less/commit/a5dd397))
+* **travis:** modernize test ([36042be](https://github.com/sparanoid/cube.less/commit/36042be))
+
+
+
 <a name"0.0.2"></a>
 ### 0.0.2 (2015-07-18)
 
