@@ -117,6 +117,23 @@ module.exports = (grunt) ->
 
     clean: [".tmp", "<%= core.dist %>/*"]
 
+    conventionalChangelog:
+      options:
+        changelogOpts:
+          preset: "angular"
+
+      dist:
+        src: "CHANGELOG.md"
+
+    bump:
+      options:
+        files: ["package.json"]
+        updateConfigs: ["config.pkg"]
+        commitMessage: "chore: release v%VERSION%"
+        commitFiles: ["-a"]
+        tagMessage: "chore: create tag %VERSION%"
+        push: false
+
   # Fire up a server on local machine for development
   grunt.registerTask "serve", [
       "clean"
@@ -140,6 +157,14 @@ module.exports = (grunt) ->
     , "csscomb"
     , "concurrent:dist"
   ]
+
+  # Release new version
+  grunt.registerTask "release", "Build, bump and commit", (type) ->
+    grunt.task.run [
+      "bump-only:#{type or 'patch'}"
+      "conventionalChangelog"
+      "bump-commit"
+    ]
 
   # Default task aka. build task
   grunt.registerTask "default", ["build"]
