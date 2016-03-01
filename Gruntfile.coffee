@@ -48,16 +48,17 @@ module.exports = (grunt) ->
 
       less:
         files: ["<%= core.app %>/**/*.less"]
-        tasks: ["less:serve", "autoprefixer", "lesslint"]
+        tasks: ["lesslint", "less:serve", "postcss:serve"]
 
     less:
+      options:
+        strictMath: true
+
       serve:
         options:
-          strictMath: true
           sourceMap: true
+          sourceMapFileInline: true
           outputSourceFiles: true
-          sourceMapURL: "cube.css.map"
-          sourceMapFilename: "<%= core.dist %>/cube.css.map"
 
         src: ["<%= core.app %>/cube.less"]
         dest: "<%= core.dist %>/cube.css"
@@ -66,11 +67,22 @@ module.exports = (grunt) ->
         src: ["<%= less.serve.src %>"]
         dest: "<%= less.serve.dest %>"
 
-    autoprefixer:
-      dist:
-        src: ["<%= less.serve.dest %>"]
+    postcss:
+      serve:
+        src: "<%= less.serve.dest %>"
         options:
-          map: true
+          map:
+            inline: true
+          processors: [
+            require("autoprefixer")(browsers: "last 1 versions")
+          ]
+
+      dist:
+        src: "<%= postcss.serve.src %>"
+        options:
+          processors: [
+            require("autoprefixer")(browsers: "last 2 versions")
+          ]
 
     csscomb:
       options:
@@ -109,7 +121,7 @@ module.exports = (grunt) ->
   grunt.registerTask "serve", [
       "clean"
     , "less:serve"
-    , "autoprefixer"
+    , "postcss:serve"
     , "concurrent:serve"
   ]
 
@@ -124,7 +136,7 @@ module.exports = (grunt) ->
       "clean"
     , "coffeelint"
     , "less:dist"
-    , "autoprefixer"
+    , "postcss:dist"
     , "csscomb"
     , "concurrent:dist"
   ]
