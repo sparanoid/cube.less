@@ -145,13 +145,13 @@ module.exports = (grunt) ->
   # Test task
   grunt.registerTask "test", [
     "build"
-    "lesslint"
   ]
 
   # Build site with `jekyll`
   grunt.registerTask "build", [
     "clean"
     "coffeelint"
+    "lesslint"
     "less:dist"
     "postcss:dist"
     "csscomb"
