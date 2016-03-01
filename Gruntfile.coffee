@@ -39,7 +39,7 @@ module.exports = (grunt) ->
           csslintrc: "<%= core.app %>/.csslintrc"
 
       test:
-        src: ["<%= core.dist %>/cube.css"]
+        src: ["<%= core.app %>/cube.less"]
 
     watch:
       coffee:
