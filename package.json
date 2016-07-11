@@ -27,7 +27,7 @@
     "autoprefixer": "^6.3.3",
     "coffeelint": "^1.10.1",
     "grunt": "^1.0.1",
-    "grunt-bump": "^0.7.0",
+    "grunt-bump": "^0.8.0",
     "grunt-coffeelint": "0.0.16",
     "grunt-concurrent": "^2.2.1",
     "grunt-contrib-clean": "^1.0.0",
