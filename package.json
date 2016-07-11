@@ -33,7 +33,7 @@
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-less": "^1.0.1",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-conventional-changelog": "^6.1.0",
     "grunt-csscomb": "^3.1.0",
     "grunt-lesslint": "^3.0.1",
