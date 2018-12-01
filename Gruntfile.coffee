@@ -33,14 +33,6 @@ module.exports = (grunt) ->
       test:
         src: ["Gruntfile.coffee"]
 
-    lesslint:
-      options:
-        csslint:
-          csslintrc: "<%= core.app %>/.csslintrc"
-
-      test:
-        src: ["<%= core.app %>/cube.less"]
-
     watch:
       coffee:
         files: ["<%= coffeelint.test.src %>"]
@@ -48,7 +40,7 @@ module.exports = (grunt) ->
 
       less:
         files: ["<%= core.app %>/**/*.less"]
-        tasks: ["lesslint", "less:serve", "postcss:serve"]
+        tasks: ["less:serve", "postcss:serve"]
 
     less:
       options:
@@ -83,14 +75,6 @@ module.exports = (grunt) ->
           processors: [
             require("autoprefixer")(browsers: "last 2 versions")
           ]
-
-    csscomb:
-      options:
-        config: "<%= core.app %>/.csscomb.json"
-
-      dist:
-        src: ["<%= less.serve.dest %>"]
-        dest: "<%= less.serve.dest %>"
 
     cssmin:
       dist:
@@ -150,10 +134,8 @@ module.exports = (grunt) ->
   grunt.registerTask "build", [
     "clean"
     "coffeelint"
-    "lesslint"
     "less:dist"
     "postcss:dist"
-    "csscomb"
     "concurrent:dist"
   ]
 
